@@ -12,7 +12,7 @@ use Dolmen\OptionsResolver\Factory\OptionsResolverFactory;
  *
  * @author David Jegat <david.jegat@gmail.com>
  */
-class Launcher
+class Launcher implements Launchable
 {
     /**
      * @var array

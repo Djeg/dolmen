@@ -35,6 +35,11 @@ class LauncherSpec extends ObjectBehavior
         $this->shouldHaveType('Dolmen\Command\Launcher\Launcher');
     }
 
+    function it_is_launchable()
+    {
+        $this->shouldHaveType('Dolmen\Command\Launcher\Launchable');
+    }
+
     function it_should_contains_commands(Commandable $command, Contextable $context)
     {
         $command->getName()->willReturn('foo');
