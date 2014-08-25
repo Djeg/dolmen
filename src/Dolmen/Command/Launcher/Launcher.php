@@ -2,10 +2,10 @@
 
 namespace Dolmen\Command\Launcher;
 
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Dolmen\Command\Commandable;
 use Dolmen\Context\Contextable;
 use Dolmen\OptionsResolver\Factory\OptionsResolverFactory;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 /**
  * Contains a list of commands and can launch the command properly.
@@ -38,9 +38,9 @@ class Launcher implements Launchable
      * @param EventDispatcher $dispatcher
      */
     public function __construct(
-        EventDispatcher        $dispatcher,
-        LauncherEventFactory   $eventFactory = null,
-        OptionsResolverFactory $resolverFactory = null
+        EventDispatcherInterface $dispatcher,
+        LauncherEventFactory     $eventFactory = null,
+        OptionsResolverFactory   $resolverFactory = null
     ) {
         $this->dispatcher      = $dispatcher;
         $this->commands        = [];

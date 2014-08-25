@@ -21,7 +21,7 @@ class Renderer
     /**
      * @param OptionsResolverFactory $resolverFactory
      */
-    public function __construpct(OptionsResolverFactory $resolverFactory = null)
+    public function __construct(OptionsResolverFactory $resolverFactory = null)
     {
         $this->resolverFactory = $resolverFactory ?: new OptionsResolverFactory;
     }
@@ -35,7 +35,7 @@ class Renderer
      */
     public function render(ViewableContext $view, Contextable $context, array $options)
     {
-        $resolver = $this->OptionsResolverFactory->create();
+        $resolver = $this->resolverFactory->create();
 
         $view->configureOptions($resolver);
 

@@ -4,7 +4,6 @@ namespace spec\Dolmen\Command\Launcher;
 
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
-use Symfony\Component\EventDispatcher\EventDispatcher;
 use Dolmen\Command\Launcher\LauncherEventFactory;
 use Dolmen\Command\Commandable;
 use Dolmen\Context\Event\ContextValidationEvent;
@@ -13,11 +12,12 @@ use Dolmen\Context\Contextable;
 use Dolmen\Command\Launcher\LauncherEvents;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Dolmen\OptionsResolver\Factory\OptionsResolverFactory;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class LauncherSpec extends ObjectBehavior
 {
     function let(
-        EventDispatcher $dispatcher,
+        EventDispatcherInterface $dispatcher,
         LauncherEventFactory $eventFactory,
         CommandEvent $commandEvent,
         ContextValidationEvent $contextEvent,
